@@ -18,11 +18,11 @@ app.set('views', path.join(baseDir, '/src/views'));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-	res.render('pages/welcome');
+	res.render('pages/welcome', {versionName: model.getVersionName()});
 });
 
 app.get('/welcome', (req, res) => {
-	res.render('pages/welcome');
+	res.render('pages/welcome', {versionName: model.getVersionName()});
 });
 
 app.get('/books', async (req, res) => {

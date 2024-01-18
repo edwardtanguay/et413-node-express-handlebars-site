@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { IBook } from './interfaces';
 
+export const getVersionName = () => {
+	return 'Handlebars 1.1';
+}
+
 export const getBooks = () => {
 	const bookUrl = 'https://edwardtanguay.vercel.app/share/books.json';
 	return new Promise<IBook[]>(async (resolve, reject) => {
