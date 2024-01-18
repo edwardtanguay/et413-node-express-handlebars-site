@@ -20,6 +20,8 @@ export const getBooks = () => {
 			}
 			books.push(book);
 		}
-		resolve(books);
+		setTimeout(() => {
+			resolve(books);
+		}, 3000);
 	})
 }
