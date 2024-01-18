@@ -1,5 +1,5 @@
 {
-  "name": "et371-node-express-ejs-site",
+  "name": "et413-node-express-handlebars-site",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,7 +20,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.5",
-    "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-handlebars": "^7.1.2",
     "handlebars": "^4.7.8"
