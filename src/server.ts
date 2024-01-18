@@ -15,7 +15,7 @@ Handlebars.registerHelper('is-equals', (arg1, arg2, options) => {
 app.engine('.hbs', engine({
 	extname: '.hbs',
 	layoutsDir: path.join(baseDir, '/src/views/layouts'),
-	partialsDir:path.join(baseDir, '/src/views/partials'),
+	partialsDir: path.join(baseDir, '/src/views/partials'),
 }));
 
 app.set('view engine', '.hbs');
@@ -23,11 +23,11 @@ app.set('views', path.join(baseDir, '/src/views'));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-	res.render('pages/welcome', {versionName: model.getVersionName()});
+	res.render('pages/welcome', { versionName: model.getVersionName() });
 });
 
 app.get('/welcome', (req, res) => {
-	res.render('pages/welcome', {versionName: model.getVersionName()});
+	res.render('pages/welcome', { versionName: model.getVersionName() });
 });
 
 app.get('/books', async (req, res) => {
@@ -43,6 +43,10 @@ app.get('/book/:idCode', async (req, res) => {
 
 app.get('/about', (req, res) => {
 	res.render('pages/about', {});
+});
+
+app.get('/api/books', async (req, res) => {
+	res.json(await model.getBooks());
 });
 
 app.get('*', (req, res) => {
