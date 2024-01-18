@@ -2,7 +2,7 @@
 {{>menu pageIdCode="books"}}
 <div id="vueapp">
     <p>\{{howManyBooksMessage}}</p>
-    <p v-if="books.length === 0">Loading...</p>
+    <div v-if="books.length === 0" class="spinner"></div>
     <div class="books">
         <a v-for="book in books" :href="`book/${book.idCode}`"><img class="book" :src="`images/books/${book.idCode}.png`"/></a>
     </div>
