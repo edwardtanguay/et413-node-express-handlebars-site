@@ -36,8 +36,7 @@ app.get('/books', async (req, res) => {
 
 app.get('/book/:idCode', async (req, res) => {
 	const idCode = req.params.idCode;
-	const books = await model.getBooks();
-	const book = books.find(m => m.idCode === idCode);
+	const book = await model.getBook(idCode);
 	res.render('pages/book', { book });
 });
 
