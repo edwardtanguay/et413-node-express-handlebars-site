@@ -1,12 +1,12 @@
-	<%- include('../partials/header') %>
-    <%- include('../partials/menu', {pageIdCode: 'books'})%>
-    <div>
-        <p>There are
-            <%= books.length %> books.
-        </p>
-        <div class="books">
-            <% books.forEach((book) => { %>
-                <a href="book/<%=book.idCode%>"><img class="book" src="images/books/<%=book.idCode%>.png"/></a>
-            <% }) %>
-        </div>
+{{>header}}
+{{>menu pageIdCode="books"}}
+<div>
+    <p>There are
+        <%= books.length %> books.
+    </p>
+    <div class="books">
+        <% books.forEach((book) => { %>
+            <a href="book/<%=book.idCode%>"><img class="book" src="images/books/<%=book.idCode%>.png"/></a>
+        <% }) %>
     </div>
+</div>
