@@ -1,12 +1,11 @@
 {{>header}}
 {{>menu pageIdCode="books"}}
 <div>
-    <p>There are
-        <%= books.length %> books.
+    <p>There are {{{books.length}}} books.
     </p>
     <div class="books">
-        <% books.forEach((book) => { %>
-            <a href="book/<%=book.idCode%>"><img class="book" src="images/books/<%=book.idCode%>.png"/></a>
-        <% }) %>
+        {{#books}}
+            <a href="book/{{{idCode}}}"><img class="book" src="images/books/{{{idCode}}}.png"/></a>
+        {{/books}}
     </div>
 </div>
