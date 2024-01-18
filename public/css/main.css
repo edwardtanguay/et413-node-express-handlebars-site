@@ -33,6 +33,7 @@ div.books {
 	gap: 1rem;
 	flex-wrap: wrap;
 }
+
 img.book {
 	width: 10rem;
 	height: fit-content;
