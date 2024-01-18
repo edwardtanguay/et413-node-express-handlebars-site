@@ -1,8 +1,25 @@
 {{>header}}
 {{>menu pageIdCode="books"}}
-<div>
+<div id="vueapp">
     <p>\{{howManyBooksMessage}}</p>
     <div class="books">
         BOOKS
     </div>
 </div>
+
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                howManyBooksMessage: "",
+            };
+        },
+        methods: {
+            initialize() {
+                this.howManyBooksMessage = "inserted with Vue.js";
+            },
+        },
+    })
+        .mount("#vueapp")
+        .initialize();
+</script>
