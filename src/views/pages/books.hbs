@@ -12,11 +12,17 @@
         data() {
             return {
                 howManyBooksMessage: "",
+                books: []
             };
         },
         methods: {
             initialize() {
+                (async () => {
+                const response = await fetch('/api/books');
+                this.books = await response.json();
+                console.log('num of books', this.books.length)
                 this.howManyBooksMessage = "inserted with Vue.js";
+                })();
             },
         },
     })
