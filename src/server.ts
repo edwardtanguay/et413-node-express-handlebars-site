@@ -3,9 +3,14 @@ import * as config from './config';
 import path from 'path';
 import * as model from './model';
 import { engine } from 'express-handlebars';
+import Handlebars from 'handlebars';
 
 const app = express();
 const baseDir = process.cwd();
+
+Handlebars.registerHelper('is-equals', (arg1, arg2, options) => {
+	return (arg1 === arg2) ? options.fn(this) : options.inverse(this);
+})
 
 app.engine('.hbs', engine({
 	extname: '.hbs',
